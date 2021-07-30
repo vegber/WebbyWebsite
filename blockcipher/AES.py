@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import sys
 import os
 
@@ -8,7 +6,7 @@ sys.path.append(os.getcwd())
 from collections import deque
 import numpy
 from numpy import polymul, polydiv
-import S_BOX as sb
+import blockcipher.S_BOX as sb
 
 
 class Cipher:
