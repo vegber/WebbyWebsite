@@ -13,7 +13,7 @@ def hello_world():
     img_url = url_for('static', filename='AES.jpeg')
 
     if request.method == 'GET':
-        return render_template('index2.html', image_url=img_url)
+        return render_template('index.html', image_url=img_url)
     elif request.method == 'POST':
         plaintext = request.form.get('Encryption_field')
         key = request.form.get("Key_field")
@@ -46,7 +46,7 @@ def about():
 @app.route('/Home')
 def home():
     img_url = url_for('static', filename='AES.jpeg')
-    return render_template('index2.html', image_url=img_url)
+    return render_template('index.html', image_url=img_url)
 
 
 @app.route('/login', methods=['GET', 'POST'])
