@@ -37,7 +37,8 @@
 .u-section-1 .u-btn-1 {
   background-image: none;
   border-style: solid;
-  margin: 0 auto 0 267px;
+  margin: auto 0 267px;
+  position: relative;
 }
 
 .u-section-1 .u-btn-2 {
