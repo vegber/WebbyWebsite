@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="NO">
+<html style="font-size: 16px;">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -23,7 +23,6 @@
 		"logo": "{{ image_url }}",
 		"sameAs": []
 }
-
     </script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
@@ -34,7 +33,7 @@
     <div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" class="u-image u-logo u-image-1"
            data-image-width="275" data-image-height="183">
-            <img src="{{ image_url }}" class="u-logo-image u-logo-image-1" alt="logo">
+            <img src="{{ image_url }}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1">
             <div class="menu-collapse" style="font-size: 1rem;">
@@ -46,19 +45,33 @@
                          id="svg-8a8f" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;"
                          xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect
                             y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
-                        </g>
-                      </svg>
+</g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g></svg>
                 </a>
             </div>
             <div class="u-custom-menu u-nav-container">
                 <ul class="u-nav u-unstyled u-nav-1">
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/" style="padding: 10px 20px;">Home</a>
+                            href="Home.html" style="padding: 10px 20px;">Home</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="About" style="padding: 10px 20px;">About</a>
+                            href="About.html" style="padding: 10px 20px;">About</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
@@ -71,10 +84,10 @@
                     <div class="u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/"
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html"
                                                       style="padding: 10px 20px;">Home</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About"
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html"
                                                       style="padding: 10px 20px;">About</a>
                             </li>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html"
@@ -135,33 +148,19 @@
 <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="1280"
          data-image-height="800" id="sec-01fa">
     <div class="u-align-center u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-text-default u-text-1"> Welcome to AES&nbsp;<br><br></h1>
-        <form action="/" method="post">
-            <label>
-                <textarea name="Key_field" onkeyup="success()" class="form-control" rows="1"
-                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%;"
-                          placeholder="Key text..."></textarea>
-            </label>
-            <label>
-                <textarea name="Encryption_field" class="form-control"
-                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%;"
-                          rows="1" placeholder="Encryption text..."></textarea>
-            </label>
-            <label>
-                <textarea name="Decryption_field" class="form-control" rows="1"
-                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%;"
-                          placeholder="Decryption text..."></textarea>
-            </label>
-
-            <button href="/" type="submit" method="post"
-                    class="u-align-center u-border-2 u-border-black u-btn u-button-style u-palette-4-light-2 u-text-body-color u-btn-1">
-                Do the magic
-            </button>
-        </form>
+        <h1 class="u-text u-text-default u-text-1">Welcome to AES&nbsp;<br>
+            <br>
+        </h1>
+    <h2>Your plaintext is: </h2>
+        <h3>
+        {{ data }}
+        </h3>
     </div>
+    <h1  src="{{ ciphertext }}" alt="Dunno" id="whatthefyck" ></h1>
+    <a href="/" class="button" style="position: center" >Gack to home! </a>
+    <ul>
+    </ul>
 </section>
-
-
 <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-d8a0">
     <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">The Advanced Encryption Standard (AES), also known by its
@@ -176,7 +175,7 @@
     <p class="u-text">
         <span>Created by </span>
     </p>
-    <a class="u-link" href="https://google.com" target="_blank">
+    <a class="u-link" href="https://pornhub.com/" target="_blank">
         <span>Vegard Berge</span>
     </a>.
 </section>

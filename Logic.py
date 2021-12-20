@@ -2,6 +2,11 @@ from blockcipher.AES import Cipher
 from blockcipher.DataManagement import stream_to_blocks, ascii_to_hex, two_by_two_to_str, hex_to_ascii
 
 
+def test(decrypted):
+    import BitVector
+    obj = BitVector.BitVector(hexstring=decrypted)
+    return str(obj.get_bitvector_in_ascii())
+
 def do_decryption(key, cipher_text):
     # assume ciphertext is in hex
     hexed_key = stream_to_blocks(ascii_to_hex(key))
@@ -13,14 +18,19 @@ def do_decryption(key, cipher_text):
         aes.zerofix()
         decrypted += two_by_two_to_str(aes.state)
     #     a = [x for x in ciphertext]
-    a = [x for x in decrypted]
-    evensized = [''.join(a[i:i + 32]) for i in range(0, len(a), 32)]
-    out = ""
-    for x in evensized:
-        out += hex_to_ascii(x)
-    return ([out])
-    # return hex_to_ascii(decrypted)
-    # return list(hex_to_ascii(decrypted))
+    return test(decrypted)
+""" 
+print(decrypted)
+a = [x for x in decrypted]
+evensized = [''.join(a[i:i + 32]) for i in range(0, len(a), 32)]
+out = ""
+for x in evensized:
+    print(f"elem in evensized {type(x)}")
+    out += hex_to_ascii(x)
+return ([out])
+"""
+# return hex_to_ascii(decrypted)
+# return list(hex_to_ascii(decrypted))
 
 
 def encrypt(key, plaintext):

@@ -26,7 +26,7 @@ def hex_to_ascii(input):
     :param input:
     :return:
     """
-    return bytes.fromhex(input).decode('utf-8')
+    return bytes.fromhex(input).decode('ascii') #'utf-8')
 
 
 def stream_to_blocks(block):

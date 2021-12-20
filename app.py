@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from flask import request, url_for
-
 from Logic import do_decryption, do_encryption
 
 app = Flask(__name__)
@@ -19,11 +18,19 @@ def hello_world():
         key = request.form.get("Key_field")
         dec = request.form.get('Decryption_field')
         # Encrypt
+        if plaintext != '' and dec != '':
+            return render_template("index.html", image_url=img_url)
+
         if dec == '' and plaintext != '':
-            evensized = do_encryption(key, plaintext)
-        else:
-            evensized = do_decryption(key, dec)
-        return render_template('encrypted.html', image_url=img_url, data=evensized)
+            try:
+                cipher_output = do_encryption(key, plaintext)
+                return render_template('encrypted.html', image_url=img_url, data=cipher_output)
+            except:
+                return render_template("error404.html")
+        else: # Decrypt
+            cipher_output = do_decryption(key, dec)
+            return render_template('decrypted.html', image_url=img_url, data=cipher_output)
+        #return render_template('encrypted.html', image_url=img_url, data=cipher_output)
     else:
         return render_template('error404.html')
 
