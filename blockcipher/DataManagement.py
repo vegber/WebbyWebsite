@@ -8,6 +8,7 @@ decryption.
 - HEX to ASCII values
 - PADDING
 """
+from binascii import hexlify
 from BitVector import *
 
 
@@ -17,7 +18,7 @@ def ascii_to_hex(input):
     :param input:
     :return: input as hex
     """
-    return input.encode().hex()
+    return input.encode('utf-8', 'replace').hex()
 
 
 def hex_to_ascii(input):
@@ -26,7 +27,7 @@ def hex_to_ascii(input):
     :param input:
     :return:
     """
-    return bytes.fromhex(input).decode('ascii')  # 'utf-8')
+    return bytes.fromhex(input).decode('utf-8')  # 'utf-8')
 
 
 def stream_to_blocks(block):
