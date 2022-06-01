@@ -23632,6 +23632,37 @@ li.active > a.u-button-style.u-button-style.u-active-palette-4-light-2[class*="u
   color: #111111 !important;
   background-color: #adf6f2 !important;
 }
+
+.inner_div
+{
+    position: absolute;
+    overflow-wrap: break-word;
+    display: block;
+    width: 300px;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    background-color: #BBB;
+    color:black;
+    left:50%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+}
+
+.outer_div
+{
+    background-color: #999;
+    overflow-wrap: break-word;
+    display: block;
+    width: 300px;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    border: 0 solid black;
+    height: 200px;
+    position: fixed;
+}
+
 a.u-link.u-hover-palette-4-light-2:hover {
   color: #adf6f2 !important;
 }

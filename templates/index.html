@@ -60,10 +60,6 @@
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
                             href="About" style="padding: 10px 20px;">About</a>
                     </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="Contact.html" style="padding: 10px 20px;">Contact</a>
-                    </li>
                 </ul>
             </div>
             <div class="u-custom-menu u-nav-container-collapse">
@@ -77,9 +73,7 @@
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About"
                                                       style="padding: 10px 20px;">About</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html"
-                                                      style="padding: 10px 20px;">Contact</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -136,10 +130,10 @@
          data-image-height="800" id="sec-01fa">
     <div class="u-align-center u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1"> Welcome to AES&nbsp;<br><br></h1>
-        <form action="/" method="post">
+        <form method="post">
             <label>
-                <textarea name="Key_field" onkeyup="success()" class="form-control" rows="1"
-                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%;"
+                <textarea name="Key_field" onkeyup="success()" class="form-control" rows="1" maxlength="12" minlength="12" required
+                          style="color: black;background-color: transparent;border: 2px black;padding: 1px;margin: 5px;display: block;width: 100%;"
                           placeholder="Key text..."></textarea>
             </label>
             <label>
@@ -153,10 +147,10 @@
                           placeholder="Decryption text..."></textarea>
             </label>
 
-            <button href="/" type="submit" method="post"
-                    class="u-align-center u-border-2 u-border-black u-btn u-button-style u-palette-4-light-2 u-text-body-color u-btn-1">
-                Do the magic
-            </button>
+            <button type="submit" method="POST" formaction="/encrypt" id="encrypt_button" class="u-btn u-button-style u-palette-2-base">Encrypt</button>
+            <button type="submit" method="POST" id="decrypt_button" formaction="/decrypt" class="u-btn u-button-style u-palette-2-base ">Decrypt</button>
+
+
         </form>
     </div>
 </section>

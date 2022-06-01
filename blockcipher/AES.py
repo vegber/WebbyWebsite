@@ -206,8 +206,6 @@ class Cipher:
             _, remainder = polydiv(w, aes_poly)
             for x in range(0, len(remainder)):
                 remainder[x] = remainder[x] % 2
-            # var = remainder.astype(int)
-            # #print(type(var))
             remainder = remainder[::-1]
             sum = 0
             for i in range(len(remainder)):
@@ -340,7 +338,7 @@ if __name__ == '__main__':
     plaintext_ = "7665676172646265726765706c61696e"
     alter_key = "31323334353637383132333435363738"
     alter_cipher = "7c02d7bef794da08999953c2e1ac1f7e"
-    cipher = Cipher(alter_key, alter_cipher, 128)
-    # cipher.Encrypt()
-    cipher.Decrypt()
+    cipher = Cipher(alter_key, plaintext_, 128)
+    cipher.Encrypt()
+    #cipher.Decrypt()
     cipher.printable(False)

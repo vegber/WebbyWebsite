@@ -26,7 +26,7 @@ def hex_to_ascii(input):
     :param input:
     :return:
     """
-    return bytes.fromhex(input).decode('ascii') #'utf-8')
+    return bytes.fromhex(input).decode('ascii')  # 'utf-8')
 
 
 def stream_to_blocks(block):
@@ -77,6 +77,7 @@ def zeroesUpToN(n):
         zeros += s.count('0')
     return zeros
 
+
 def two_by_two_to_str(two_by_two):
     out = ""
     transposed_list = transpose(two_by_two)
@@ -85,6 +86,7 @@ def two_by_two_to_str(two_by_two):
             out += y
     return out
 
+
 def transpose(nested_list):
     transpose = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
     for x in range(4):
@@ -92,8 +94,10 @@ def transpose(nested_list):
             transpose[y][x] = nested_list[x][y]
     return transpose
 
+
 def read_from_file(file_name):
     return open(file_name, 'r+')
+
 
 def format_content(content: list, content_encoding: bool) -> list:
     """
@@ -111,7 +115,7 @@ def format_content(content: list, content_encoding: bool) -> list:
         content_str = ascii_to_hex(content_str)
     return stream_to_blocks(content_str)
 
+
 def write_to_file(content, filename):
     with open(filename, 'w+') as file:
         file.write(content)
-
