@@ -133,22 +133,22 @@
         <form method="post">
             <label>
                 <textarea name="Key_field" onkeyup="success()" class="form-control" rows="1" maxlength="12" minlength="12" required
-                          style="color: black;background-color: transparent;border: 2px black;padding: 1px;margin: 5px;display: block;width: 100%;"
+                          style="color: black;background-color: transparent;border: 2px black;padding: 1px;margin: 5px;display: block;width: 100%; height: fit-content"
                           placeholder="Key text..."></textarea>
             </label>
             <label>
                 <textarea name="Encryption_field" class="form-control"
-                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%;"
+                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%; height: 50px"
                           rows="1" placeholder="Encryption text..."></textarea>
             </label>
             <label>
                 <textarea name="Decryption_field" class="form-control" rows="1"
-                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%;"
+                          style="color: black;background-color: transparent;border: 1.5px black;padding: 1px;margin: 5px;display: block;width: 100%; height: 50px"
                           placeholder="Decryption text..."></textarea>
             </label>
 
-            <button type="submit" method="POST" formaction="/encrypt" id="encrypt_button" class="u-btn u-button-style u-palette-2-base">Encrypt</button>
-            <button type="submit" method="POST" id="decrypt_button" formaction="/decrypt" class="u-btn u-button-style u-palette-2-base ">Decrypt</button>
+            <button type="submit" method="POST" formaction="/encrypt" id="encrypt_button" class="u-border-black u-btn u-button-style u-palette-4-light-2 u-text-body-color" style="display: inline-block; left: auto">Encrypt</button>
+            <button type="submit" method="POST" id="decrypt_button" formaction="/decrypt" class="u-border-black u-btn u-button-style u-palette-4-light-2 u-text-body-color" style="display: inline-block; left: auto; background: transparent; color: #4c7397">Decrypt</button>
 
 
         </form>
@@ -170,7 +170,7 @@
     <p class="u-text">
         <span>Created by </span>
     </p>
-    <a class="u-link" href="https://google.com" target="_blank">
+    <a class="u-link" href="https://github.com/vegber" target="_blank">
         <span>Vegard Berge</span>
     </a>.
 </section>

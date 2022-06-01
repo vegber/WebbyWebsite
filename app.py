@@ -44,6 +44,8 @@ def encryption():
     if request.method == 'POST':
         plaintext = request.form.get('Encryption_field')
         key = request.form.get('Key_field')
+        if plaintext == '':
+            return render_template('error404.html')
         try:
             return render_template('encrypted.html', image_url=img_url, data=''.join(do_encryption(key, plaintext)))
         except:
@@ -56,6 +58,9 @@ def decryption():
     if request.method == 'POST':
         cipher_text = request.form.get('Decryption_field')
         key = request.form.get('Key_field')
+
+        if cipher_text == '':
+            return render_template('error404.html')
         try:
             return render_template('decrypted.html', image_url=img_url, data=do_decryption(key, cipher_text))
         except:
