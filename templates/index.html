@@ -9,6 +9,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="../static/nicepage.css" media="screen">
     <link rel="stylesheet" href="../static/Home.css" media="screen">
+    <link rel="stylesheet" href="../static/input_boxes.css" media="screen">
     <script class="u-script" type="text/javascript" src="../static/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../static/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.21.3, nicepage.com">
@@ -132,18 +133,19 @@
         <h1 class="u-text u-text-default u-text-1"> Welcome to AES&nbsp;<br><br></h1>
         <form method="post">
             <label>
-                <textarea name="Key_field" onkeyup="success()" class="form-control" rows="1" maxlength="12" minlength="12" required
-                          style="left: 50%; color: black;  background-color: transparent;border: solid 1px #667275 ;padding: 1px;margin: 10px;display: block; width: 75%; height: fit-content"
+                <text style="margin-left: auto">Key must be 12 characters: </text>
+                <textarea name="Key_field" onkeyup="success()" class="form-control tabcontent" rows="1" maxlength="12" minlength="12" required
+                          style="left: 100%; color: black;  background-color: transparent;border: solid 1px #667275 ;padding: 1px; display: block; width: 75%; height: fit-content"
                           placeholder="Key text..."></textarea>
             </label>
             <label>
-                <textarea name="Encryption_field" class="form-control" maxlength="128"
-                          style="color: black;background-color: transparent;border: solid 1px #667275;padding: 1px;margin: 10px;display: block;width: 75%; height: 50px"
+                <textarea name="Encryption_field" class="form-control tabcontent" maxlength="128"
+                          style="color: black;background-color: transparent;border: solid 1px #667275;padding: 1px;display: block;width: 75%; height: 50px"
                           rows="1" placeholder="Encryption text..."></textarea>
             </label>
             <label>
                 <textarea name="Decryption_field" class="form-control" rows="1" maxlength="256"
-                          style="color: black;background-color: transparent;border: solid 1px #667275;padding: 1px;margin: 10px;display: block;width: 75%; height: 50px"
+                          style="color: black;background-color: transparent;border: solid 1px #667275;padding: 1px;display: block;width: 75%; height: 50px"
                           placeholder="Decryption text..."></textarea>
             </label>
 
@@ -164,9 +166,6 @@
     </div>
 </footer>
 <section class="u-backlink u-clearfix u-grey-80">
-    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span></span>
-    </a>
     <p class="u-text">
         <span>Created by </span>
     </p>
