@@ -20,7 +20,8 @@ def encryption():
         plaintext = request.form.get('Encryption_field')
         key = request.form.get('Key_field')
         if plaintext == '':
-            return render_template('error404.html', img_url=img_url)
+            return render_template('index.html', image_url=img_url)
+
         try:
             data = ''.join(do_encryption(key, plaintext))
         except:
@@ -40,7 +41,7 @@ def decryption():
         key = request.form.get('Key_field')
 
         if cipher_text == '':
-            return render_template('error404.html', img_url=img_url)
+            return render_template('index.html', image_url=img_url)
 
         try:
             data = do_decryption(key, cipher_text)
