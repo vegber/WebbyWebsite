@@ -18,7 +18,7 @@ def ascii_to_hex(input):
     :param input:
     :return: input as hex
     """
-    return input.encode('utf-8', 'replace').hex()
+    return input.encode('utf-8').hex()
 
 
 def hex_to_ascii(input):
