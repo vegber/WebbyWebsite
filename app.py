@@ -20,11 +20,16 @@ def encryption():
         plaintext = request.form.get('Encryption_field')
         key = request.form.get('Key_field')
         if plaintext == '':
-            return render_template('error404.html')
+            return render_template('error404.html', img_url=img_url)
         try:
-            return render_template('encrypted.html', image_url=img_url, data=''.join(do_encryption(key, plaintext)))
+            data = ''.join(do_encryption(key, plaintext))
         except:
-            render_template('error404.html')
+            print("Error occurred during encryption! ")
+            data = "Ups something went wrong"
+        try:
+            return render_template('encrypted.html', image_url=img_url, data=data)
+        except:
+            render_template('error404.html', img_url=img_url)
 
 
 @app.route('/decrypt', methods=['POST'])
@@ -35,17 +40,17 @@ def decryption():
         key = request.form.get('Key_field')
 
         if cipher_text == '':
-            return render_template('error404.html')
+            return render_template('error404.html', img_url=img_url)
+
         try:
-            return render_template('decrypted.html', image_url=img_url, data=do_decryption(key, cipher_text))
+            data = do_decryption(key, cipher_text)
         except:
-            render_template('error404.html')
-def do_the_login():
-    pass
-
-
-def show_the_login_form():
-    pass
+            print("Error occurred during decryption! ")
+            data = "Ups something went wrong"
+        try:
+            return render_template('decrypted.html', image_url=img_url, data=data)
+        except:
+            render_template('error404.html', img_url=img_url)
 
 
 @app.route('/About')
@@ -58,14 +63,6 @@ def about():
 def home():
     img_url = url_for('static', filename='AES.jpeg')
     return render_template('index.html', image_url=img_url)
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        return do_the_login()
-    else:
-        return show_the_login_form()
 
 
 if __name__ == '__main__':
