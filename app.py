@@ -9,37 +9,12 @@ app.debug = True
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    """
-    if request.method == 'GET':
-        return render_template('index.html', image_url=img_url)
-    elif request.method == 'POST':
-        plaintext = request.form.get('Encryption_field')
-        key = request.form.get("Key_field")
-        dec = request.form.get('Decryption_field')
-        # Encrypt
-        if plaintext != '' and dec != '':
-            return render_template("index.html", image_url=img_url)
-
-        if dec == '' and plaintext != '':
-            try:
-                cipher_output = do_encryption(key, plaintext)
-                return render_template('encrypted.html', image_url=img_url, data=cipher_output)
-            except:
-                return render_template("error404.html")
-        else:  # Decrypt
-            cipher_output = do_decryption(key, dec)
-            return render_template('decrypted.html', image_url=img_url, data=cipher_output)
-        # return render_template('encrypted.html', image_url=img_url, data=cipher_output)
-    else:
-        return render_template('error404.html')
-        """
     img_url = url_for('static', filename='AES.jpeg')
     return render_template('index.html', image_url=img_url)
 
 
 @app.route('/encrypt', methods=['POST'])
 def encryption():
-    print("I got her")
     img_url = url_for('static', filename='AES.jpeg')
     if request.method == 'POST':
         plaintext = request.form.get('Encryption_field')
